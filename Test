@@ -1,0 +1,7 @@
+countdown = int(input('Countdown: '))
+while countdown > 0:
+    print(countdown)
+    countdown -= 1
+else:
+    print('Blast off!')
+  
