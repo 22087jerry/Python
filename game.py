@@ -8,4 +8,4 @@ def print_all():
     cursor.execute(sql)
     results = cursor.fetchall()
     print(results)
-    db.close()
+    db.close() 
