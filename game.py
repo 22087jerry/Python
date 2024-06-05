@@ -16,7 +16,7 @@ def print_all_game():
     results = cursor.fetchall()
     #loop through all the results
     for studio in results:
-        print(f"{studio[1]:<40}{studio[2]:<6}")
+        print(f"{studio[1]:<25}{studio[2]:<4}")
     db.close() 
 
 
