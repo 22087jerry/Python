@@ -15,6 +15,7 @@ def print_all_game():
     cursor.execute(sql)
     results = cursor.fetchall()
     #loop through all the results
+    print(f"name                 studio_name")
     for studio in results:
         print(f"{studio[1]:<25}{studio[2]:<4}")
     db.close() 
@@ -24,4 +25,11 @@ def print_all_game():
 
 
 #main code
-print_all_game()
+while True:
+    user_input = input("\nWhat would you like to do. \n1. Print all game name\n2.Exit\nAwnser here: ")
+    if user_input == "1":
+        print_all_game()
+    if user_input == "2":
+        break
+    else:
+        print("That was not an option\n")
