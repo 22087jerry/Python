@@ -20,8 +20,8 @@ def print_all_game():
         print(f"{studio[1]:<25}{studio[2]:<4}")
     db.close() 
 
-def print_all_game_data():
-    '''print all the game nicely'''
+def print_all_data():
+    '''print all the data nicely'''
     db = sqlite3.connect(DATABASE)
     cursor = db.cursor()
     sql = "SELECT * from Game;"
@@ -34,7 +34,7 @@ def print_all_game_data():
     db.close() 
 
 def print_all_Genre():
-    '''print all the game nicely'''
+    '''print all the Genre nicely'''
     db = sqlite3.connect(DATABASE)
     cursor = db.cursor()
     sql = "SELECT * from Genre;"
@@ -63,7 +63,7 @@ What would you like to do.
     if user_input == "1":
         print_all_game()
     elif user_input == "2":
-        print_all_game_data()
+        print_all_data()
     elif user_input == "3":
         print_all_Genre()
     elif user_input == "4":
