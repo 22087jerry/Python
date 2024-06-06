@@ -15,9 +15,9 @@ def print_all_game():
     cursor.execute(sql)
     results = cursor.fetchall()
     #loop through all the results
-    print(f"name                 studio_name")
+    print(f"name                          studio_name")
     for studio in results:
-        print(f"{studio[1]:<20}{studio[2]:<4}")
+        print(f"{studio[1]:<25}{studio[2]:<4}")
     db.close() 
 
 def print_all_game_data():
@@ -33,17 +33,17 @@ def print_all_game_data():
         print(f"{game[3]:<30}{game[4]:<8}")
     db.close() 
 
-def print_all_game_genre():
+def print_all_Genre():
     '''print all the game nicely'''
     db = sqlite3.connect(DATABASE)
     cursor = db.cursor()
-    sql = "SELECT * from Game Genre;"
+    sql = "SELECT * from Genre;"
     cursor.execute(sql)
     results = cursor.fetchall()
     #loop through all the results
     print(f"name")
-    for Game_Genre in results:
-        print(f"{Game_Genre[]}")
+    for Genre in results:
+        print(f"{Genre[1]}")
     db.close() 
 
 
@@ -52,13 +52,20 @@ def print_all_game_genre():
 
 #main code
 while True:
-    user_input = input("\nWhat would you like to do. \n1. Print all game name. \n2. Print all game data. \n3. print all genre. \n4.Exit. \nAwnser here: ")
+    user_input = input(
+"""
+What would you like to do. 
+1. Print all game name. 
+2. Print all game data. 
+3. print all genre. 
+4. Exit. 
+""")
     if user_input == "1":
         print_all_game()
     elif user_input == "2":
         print_all_game_data()
     elif user_input == "3":
-        print_all_game_genre()
+        print_all_Genre()
     elif user_input == "4":
         break
     
