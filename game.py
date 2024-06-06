@@ -59,7 +59,18 @@ def print_all_Genres():
      print(f"{Genres[0]:<20}{Genres[1]:<5}")
     db.close() 
 
-
+def print_all_datas():
+    '''print all the datas nicely'''
+    db = sqlite3.connect(DATABASE)
+    cursor = db.cursor()
+    sql = "SELECT  Game_ID, Release_date from Game order by Release_date desc;"
+    cursor.execute(sql)
+    results = cursor.fetchall()
+    #loop through all the results
+    print(f"ID        Release_date")
+    for games in results:
+        print(f"{games[2]:<10}{games[4]:<8}")
+    db.close() 
 
 
 
@@ -75,8 +86,9 @@ What would you like to do.
 1. Print all game name. 
 2. Print all game data. 
 3. print all genre. 
-4. print all genre according to alphabetical order A-Z
-5. Exit. 
+4. print all genre according to alphabetical order A-Z.
+5. print just the release date of the games
+6. Exit. 
 """)
     if user_input == "1":
         print_all_game()
@@ -87,6 +99,8 @@ What would you like to do.
     elif user_input == "4":
         print_all_Genres()
     elif user_input == "5":
+        print_all_datas()
+    elif user_input == "6":
         break
     
     else:
