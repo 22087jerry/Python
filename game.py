@@ -15,9 +15,9 @@ def print_all_game():
     cursor.execute(sql)
     results = cursor.fetchall()
     #loop through all the results
-    print(f"name                          studio_name")
+    print(f"ID                 name   studio_name")
     for studio in results:
-        print(f"{studio[1]:<25}{studio[2]:<4}")
+        print(f"{studio[0]:<10}{studio[1]:<24}{studio[2]:<4}")
     db.close() 
 
 def print_all_data():
@@ -28,9 +28,9 @@ def print_all_data():
     cursor.execute(sql)
     results = cursor.fetchall()
     #loop through all the results
-    print(f"Player_ammount                Release_date")
+    print(f"ID              Player_ammount     Release_date")
     for game in results:
-        print(f"{game[3]:<30}{game[4]:<8}")
+        print(f"{game[2]:<10}{game[3]:<30}{game[4]:<8}")
     db.close() 
 
 def print_all_Genre():
@@ -41,9 +41,9 @@ def print_all_Genre():
     cursor.execute(sql)
     results = cursor.fetchall()
     #loop through all the results
-    print(f"name")
+    print(f"ID          genre:")
     for Genre in results:
-        print(f"{Genre[1]}")
+        print(f"{Genre[0]:<10}{Genre[1]:<5}")
     db.close() 
 
 
