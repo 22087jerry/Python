@@ -72,10 +72,18 @@ def print_all_datas():
         print(f"{games[2]:<12}{games[3]:<22}{games[4]:<5}")
     db.close() 
 
-
-    
-    
-
+def print_all_gamess():
+    '''print all the gamess nicely'''
+    db = sqlite3.connect(DATABASE)
+    cursor = db.cursor()
+    sql = "SELECT * from studio order by name desc;"
+    cursor.execute(sql)
+    results = cursor.fetchall()
+    #loop through all the results
+    print(f"ID         name                     studio_name")
+    for studio in results:
+        print(f"{studio[0]:<10}{studio[1]:<24}{studio[2]:<4}")
+    db.close() 
 
 
 
@@ -89,13 +97,14 @@ while True:
     user_input = input(
 """
 What would you like to do. 
-1. Print all game name. 
+1. Print all game and studio name. 
 2. Print all game data. 
 3. print all genre. 
 4. print all genre according to alphabetical order A-Z.
 5. print all game data from 30-1 by release date.
-6. All game description.
-7. Exit. 
+6. print all game and studio name order from Z-A.
+7. All game description.
+8. Exit. 
 """)
     
     if user_input == "1":
@@ -109,6 +118,8 @@ What would you like to do.
     elif user_input == "5":
         print_all_datas()
     elif user_input == "6":
+        print_all_gamess()
+    elif user_input == "7":
      input(
     """
     a. Valorant: an online multiplayer computer game, 
@@ -157,7 +168,7 @@ What would you like to do.
     """)  
     
     
-    elif user_input == "7":
+    elif user_input == "8":
             break
     else:
       print("That was not an option\n")
