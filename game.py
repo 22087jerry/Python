@@ -15,7 +15,7 @@ def print_all_game():
     cursor.execute(sql)
     results = cursor.fetchall()
     #loop through all the results
-    print(f"ID                 name   studio_name")
+    print(f"ID         name                     studio_name")
     for studio in results:
         print(f"{studio[0]:<10}{studio[1]:<24}{studio[2]:<4}")
     db.close() 
@@ -28,7 +28,7 @@ def print_all_data():
     cursor.execute(sql)
     results = cursor.fetchall()
     #loop through all the results
-    print(f"ID              Player_ammount     Release_date")
+    print(f"ID        Player_ammount                Release_date")
     for game in results:
         print(f"{game[2]:<10}{game[3]:<30}{game[4]:<8}")
     db.close() 
@@ -41,10 +41,27 @@ def print_all_Genre():
     cursor.execute(sql)
     results = cursor.fetchall()
     #loop through all the results
-    print(f"ID          genre:")
+    print(f"ID       genre:")
     for Genre in results:
         print(f"{Genre[0]:<10}{Genre[1]:<5}")
     db.close() 
+
+def print_all_Genres():
+    '''print all the Genres nicely'''
+    db = sqlite3.connect(DATABASE)
+    cursor = db.cursor()
+    sql = "SELECT * from Genre order by Name asc;"
+    cursor.execute(sql)
+    results = cursor.fetchall()
+    #loop through all the results
+    print(f"Genre:")
+    for Genres in results:
+     print(f"{Genres[1]}")
+    db.close() 
+
+
+
+
 
 
 
@@ -58,7 +75,8 @@ What would you like to do.
 1. Print all game name. 
 2. Print all game data. 
 3. print all genre. 
-4. Exit. 
+4. print all genre according to alphabetical order A-Z
+5. Exit. 
 """)
     if user_input == "1":
         print_all_game()
@@ -67,6 +85,8 @@ What would you like to do.
     elif user_input == "3":
         print_all_Genre()
     elif user_input == "4":
+        print_all_Genres()
+    elif user_input == "5":
         break
     
     else:
