@@ -54,9 +54,9 @@ def print_all_Genres():
     cursor.execute(sql)
     results = cursor.fetchall()
     #loop through all the results
-    print(f"Genre:")
+    print(f"ID                  Genre:")
     for Genres in results:
-     print(f"{Genres[1]}")
+     print(f"{Genres[0]:<20}{Genres[1]:<5}")
     db.close() 
 
 
