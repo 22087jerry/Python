@@ -4,9 +4,20 @@ import sqlite3
 
 #contants and varibales
 DATABASE = "gamers.db"
+users = {'Jerry': 'wjerry'}
 
 
 #funactions
+def login():
+    username = input("Enter your username ")
+    password = input("Enter your password ")
+
+    if username in users and users[username] == password:
+        print("login successfull")
+    else:
+        print("wrong password")
+    login()
+
 #prints all of the name of the game and the studio it was made from
 def print_all_game():
     '''print all the game nicely'''
@@ -85,6 +96,8 @@ def print_all_gamess():
     for studio in results:
         print(f"{studio[0]:<10}{studio[1]:<24}{studio[2]:<4}")
     db.close() 
+
+
 
 
 
