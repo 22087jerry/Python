@@ -7,6 +7,7 @@ DATABASE = "gamers.db"
 
 
 #funactions
+#prints all of the name of the game and the studio it was made from
 def print_all_game():
     '''print all the game nicely'''
     db = sqlite3.connect(DATABASE)
@@ -15,7 +16,7 @@ def print_all_game():
     cursor.execute(sql)
     results = cursor.fetchall()
     #loop through all the results
-    print(f"ID         name                     studio_name")
+    print(f"ID        name                    studio_name")
     for studio in results:
         print(f"{studio[0]:<10}{studio[1]:<24}{studio[2]:<4}")
     db.close() 
@@ -41,7 +42,7 @@ def print_all_Genre():
     cursor.execute(sql)
     results = cursor.fetchall()
     #loop through all the results
-    print(f"ID       genre:")
+    print(f"ID        genre:")
     for Genre in results:
         print(f"{Genre[0]:<10}{Genre[1]:<5}")
     db.close() 
@@ -67,7 +68,7 @@ def print_all_datas():
     cursor.execute(sql)
     results = cursor.fetchall()
     #loop through all the results
-    print(f"ID         Player ammount         Release date")
+    print(f"ID          Player ammount        Release date")
     for games in results:
         print(f"{games[2]:<12}{games[3]:<22}{games[4]:<5}")
     db.close() 
@@ -84,9 +85,6 @@ def print_all_gamess():
     for studio in results:
         print(f"{studio[0]:<10}{studio[1]:<24}{studio[2]:<4}")
     db.close() 
-
-
-
 
 
 
