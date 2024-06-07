@@ -13,7 +13,7 @@ users = {'Jerry': 'weka1111'}
 
 def login():
     while True:
-        username = input("Enter your username (type 'exit' to quit): ")
+        username = input("Enter your username: ")
         password = input("Enter your password: ")
         
         
