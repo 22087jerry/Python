@@ -39,7 +39,7 @@ def print_all_game():
     for studio in results:
         print(f"{studio[0]:<10}{studio[1]:<24}{studio[2]:<4}")
     db.close() 
-
+    input('Press Enter to Continue ... ')
 def print_all_data():
     '''print all the data nicely'''
     db = sqlite3.connect(DATABASE)
@@ -52,7 +52,7 @@ def print_all_data():
     for game in results:
         print(f"{game[2]:<10}{game[3]:<30}{game[4]:<8}")
     db.close() 
-
+    input('Press Enter to Continue ... ')
 def print_all_Genre():
     '''print all the Genre nicely'''
     db = sqlite3.connect(DATABASE)
@@ -65,7 +65,7 @@ def print_all_Genre():
     for Genre in results:
         print(f"{Genre[0]:<10}{Genre[1]:<5}")
     db.close() 
-
+    input('Press Enter to Continue ... ')
 def print_all_Genres():
     '''print all the Genres nicely'''
     db = sqlite3.connect(DATABASE)
@@ -78,7 +78,7 @@ def print_all_Genres():
     for Genres in results:
      print(f"{Genres[0]:<20}{Genres[1]:<5}")
     db.close() 
-
+    input('Press Enter to Continue ... ')
 def print_all_datas():
     '''print all the datas nicely'''
     db = sqlite3.connect(DATABASE)
@@ -91,7 +91,7 @@ def print_all_datas():
     for games in results:
         print(f"{games[2]:<12}{games[3]:<22}{games[4]:<5}")
     db.close() 
-
+    input('Press Enter to Continue ... ')
 def print_all_gamess():
     '''print all the gamess nicely'''
     db = sqlite3.connect(DATABASE)
@@ -104,7 +104,7 @@ def print_all_gamess():
     for studio in results:
         print(f"{studio[0]:<10}{studio[1]:<24}{studio[2]:<4}")
     db.close() 
-
+    input('Press Enter to Continue ... ')
 
                      
 
