@@ -126,10 +126,10 @@ while True:
 What would you like to do. 
 1. Print all game and studio name. 
 2. Print all game data. 
-3. print all genre. 
-4. print all genre according to alphabetical order A-Z.
-5. print all game data from 30-1 by release date.
-6. print all game and studio name order from Z-A.
+3. Print all genre. 
+4. Print all genre according to alphabetical order A-Z.
+5. Print all game data from 30-1 by release date.
+6. Print all game and studio name order from Z-A.
 7. All game description.
 8. Exit. 
 """)
