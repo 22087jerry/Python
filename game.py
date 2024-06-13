@@ -40,6 +40,7 @@ def print_all_game():
         print(f"{studio[0]:<10}{studio[1]:<24}{studio[2]:<4}")
     db.close() 
     input('Press Enter to Continue ... ')
+#Print all game data
 def print_all_data():
     '''print all the data nicely'''
     db = sqlite3.connect(DATABASE)
@@ -53,6 +54,7 @@ def print_all_data():
         print(f"{game[2]:<10}{game[3]:<30}{game[4]:<8}")
     db.close() 
     input('Press Enter to Continue ... ')
+#Print all genre
 def print_all_Genre():
     '''print all the Genre nicely'''
     db = sqlite3.connect(DATABASE)
@@ -66,6 +68,7 @@ def print_all_Genre():
         print(f"{Genre[0]:<10}{Genre[1]:<5}")
     db.close() 
     input('Press Enter to Continue ... ')
+#print all genre from a-z
 def print_all_Genres():
     '''print all the Genres nicely'''
     db = sqlite3.connect(DATABASE)
@@ -79,6 +82,7 @@ def print_all_Genres():
      print(f"{Genres[0]:<20}{Genres[1]:<5}")
     db.close() 
     input('Press Enter to Continue ... ')
+#print all data and order by release dates desc
 def print_all_datas():
     '''print all the datas nicely'''
     db = sqlite3.connect(DATABASE)
@@ -92,6 +96,7 @@ def print_all_datas():
         print(f"{games[2]:<12}{games[3]:<22}{games[4]:<5}")
     db.close() 
     input('Press Enter to Continue ... ')
+#print all game and studio order by name desc
 def print_all_gamess():
     '''print all the gamess nicely'''
     db = sqlite3.connect(DATABASE)
