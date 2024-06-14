@@ -1,6 +1,11 @@
-#docstring- Jerry Xie- game_genere database application 
+'''
+Jerry Xie- game_genere database application
+A game databse for gamers
+'''
 #imports
 import sqlite3
+from colorama import Fore, Style, init
+
 
 #contants and varibales
 DATABASE = "gamers.db"
@@ -35,9 +40,9 @@ def print_all_game():
     cursor.execute(sql)
     results = cursor.fetchall()
     #loop through all the results
-    print(f"ID        name                    studio_name")
+    print(Fore.CYAN+f"ID        name                    studio_name")
     for studio in results:
-        print(f"{studio[0]:<10}{studio[1]:<24}{studio[2]:<4}")
+        print(Fore.GREEN+f"{studio[0]:<10}{studio[1]:<24}{studio[2]:<4}")
     db.close() 
     input('Press Enter to Continue ... ')
 #Print all game data
@@ -47,11 +52,11 @@ def print_all_data():
     cursor = db.cursor()
     sql = "SELECT * from Game;"
     cursor.execute(sql)
-    results = cursor.fetchall()
+    results = cursor.fetchall()     #heheheha
     #loop through all the results
-    print(f"ID        Player_ammount                Release_date")
+    print(Fore.CYAN+f"ID        Player_ammount                Release_date")
     for game in results:
-        print(f"{game[2]:<10}{game[3]:<30}{game[4]:<8}")
+        print(Fore.MAGENTA+f"{game[2]:<10}{game[3]:<30}{game[4]:<8}")
     db.close() 
     input('Press Enter to Continue ... ')
 #Print all genre
@@ -63,9 +68,9 @@ def print_all_Genre():
     cursor.execute(sql)
     results = cursor.fetchall()
     #loop through all the results
-    print(f"ID        genre:")
+    print(Fore.CYAN+f"ID        genre:")
     for Genre in results:
-        print(f"{Genre[0]:<10}{Genre[1]:<5}")
+        print(Fore.RED+f"{Genre[0]:<10}{Genre[1]:<5}")
     db.close() 
     input('Press Enter to Continue ... ')
 #print all genre from a-z
@@ -77,9 +82,9 @@ def print_all_Genres():
     cursor.execute(sql)
     results = cursor.fetchall()
     #loop through all the results
-    print(f"ID                  Genre:")
+    print(Fore.CYAN+f"ID                  Genre:")
     for Genres in results:
-     print(f"{Genres[0]:<20}{Genres[1]:<5}")
+     print(Fore.RED+f"{Genres[0]:<20}{Genres[1]:<5}")
     db.close() 
     input('Press Enter to Continue ... ')
 #print all data and order by release dates desc
@@ -91,9 +96,9 @@ def print_all_datas():
     cursor.execute(sql)
     results = cursor.fetchall()
     #loop through all the results
-    print(f"ID          Player ammount        Release date")
+    print(Fore.CYAN+f"ID          Player ammount        Release date")
     for games in results:
-        print(f"{games[2]:<12}{games[3]:<22}{games[4]:<5}")
+        print(Fore.MAGENTA+f"{games[2]:<12}{games[3]:<22}{games[4]:<5}")
     db.close() 
     input('Press Enter to Continue ... ')
 #print all game and studio order by name desc
@@ -105,9 +110,9 @@ def print_all_gamess():
     cursor.execute(sql)
     results = cursor.fetchall()
     #loop through all the results
-    print(f"ID         name                     studio_name")
+    print(Fore.CYAN+f"ID         name                     studio_name")
     for studio in results:
-        print(f"{studio[0]:<10}{studio[1]:<24}{studio[2]:<4}")
+        print(Fore.GREEN+f"{studio[0]:<10}{studio[1]:<24}{studio[2]:<4}")
     db.close() 
     input('Press Enter to Continue ... ')
 
@@ -146,7 +151,7 @@ What would you like to do.
         print_all_datas()
     elif user_input == "6":
         print_all_gamess()
-    elif user_input == "7":
+    elif user_input == "7":   
      input(
     """
     a. Valorant: an online multiplayer computer game, 
